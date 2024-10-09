@@ -1,7 +1,7 @@
 import streamlit as st
 import joblib
 import numpy as np
-st.title("House prediction app")
+st.title("App of Prediction")
 st.image("wallpaper.jpg")
 House_size=st.number_input("Please enter House Size:")
 Bedrooms=st.number_input('Please enter No of Bedrooms:')
