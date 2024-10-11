@@ -17,7 +17,6 @@ smoker_value = 0 if smoker == "Yes" else 1
 day_value = {"Thur":0, "Fri":1, "Sat":2, "Sun":3}[day]
 time_value = 0 if time == "Lunch" else 1
 
-
 if st.button("Predict"):
     result = model.predict([[total_bill,gender_value,smoker_value,day_value,time_value,size]])
-    st.write(f"The predicted tip amount is ${result[0]:.2f}")    
+    st.write(f"The predicted tip amount is ${result[0]:.2f}")   
