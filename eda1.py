@@ -4,7 +4,7 @@ import joblib
 model = joblib.load("tips.pkl")
 
 st.title("App of Prediction")
-st.image("wallpaper.jpg")
+st.image("WhatsApp.jpeg")
 
 total_bill = st.number_input("Please enter your total_bill", min_value =0.0, step = 0.1)
 gender = st.selectbox("Sex",["Male","Female"])
