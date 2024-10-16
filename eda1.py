@@ -13,13 +13,30 @@ day = st.selectbox("day", ["Thur", "Fri", "Sat", "Sun"])
 time=st.selectbox("time",["Lunch","Dinner"])
 size = st.number_input("Please enter your size", min_value=0, step=1)
 
-gender_value = 0 if gender == "Male" else 1
+gender_value = 0 if gender == "Male" else 1 
 smoker_value = 0 if smoker == "Yes" else 1
 day_value = {"Thur":0, "Fri":1, "Sat":2, "Sun":3}[day]
 time_value = 0 if time == "Lunch" else 1
 feature7 = 0
 feature8 = 0
 
+st.write(f"Gender: {gender} (Encoded: {gender_value})")
+st.write(f"Smoker: {smoker} (Encoded: {smoker_value})")
+st.write(f"Day: {day} (Encoded: {day_value})")
+st.write(f"Time: {time} (Encoded: {time_value})")
+st.write(f"Feature 7: {feature7}")
+st.write(f"Feature 8: {feature8}")
+
 if st.button("Predict"):
     result = model.predict([[total_bill, gender_value, smoker_value, day_value, time_value, size, feature7, feature8]])
     st.write(f"The predicted tip amount is ${result[0]:.2f}")   
+    
+#if st.button("Predict"):
+        #try:
+            # Make prediction
+            #result = model.predict([[total_bill, gender_value, smoker_value, day_value, time_value, size, feature7, feature8]])
+            #st.success(f"The predicted tip amount is **${result[0]:.2f}**")
+        #except Exception as e:
+           # st.error("An error occurred during prediction: " + str(e))
+#else:
+ #   st.warning("Please fill in all fields before making a prediction.")
