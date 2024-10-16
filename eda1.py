@@ -20,13 +20,6 @@ time_value = 0 if time == "Lunch" else 1
 feature7 = 0
 feature8 = 0
 
-st.write(f"Gender: {gender} (Encoded: {gender_value})")
-st.write(f"Smoker: {smoker} (Encoded: {smoker_value})")
-st.write(f"Day: {day} (Encoded: {day_value})")
-st.write(f"Time: {time} (Encoded: {time_value})")
-st.write(f"Feature 7: {feature7}")
-st.write(f"Feature 8: {feature8}")
-
 if st.button("Predict"):
     result = model.predict([[total_bill, gender_value, smoker_value, day_value, time_value, size, feature7, feature8]])
     st.write(f"The predicted tip amount is ${result[0]:.2f}")   
